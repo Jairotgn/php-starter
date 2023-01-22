@@ -1,0 +1,22 @@
+{
+    "home": {
+        "title": "PHP Starter Kit",
+		"description": ""
+    },
+    "services": {
+        "title": "Services",
+		"description": "Services description"
+    },
+    "about-us": {
+        "title": "About Us",
+		"description": "About Us description"
+    },
+    "blog": {
+        "title": "Blog",
+		"description": "Blog description"
+    },
+    "contact": {
+        "title": "Contact",
+		"description": "Contact description"
+    }
+}

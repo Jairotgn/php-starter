@@ -1,0 +1,16 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+}
+  
+header{
+    min-height: 200px;
+    background:#ccc
+}
+
+.blog{
+    min-height: 200px;
+}
+footer{
+    background:#4d4d00
+}
