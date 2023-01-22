@@ -20,3 +20,6 @@ Extend your routes a the router.php file.
 
 ### Custom tags lang.json 
 Define page title and meta description in this file.
+
+
+![A snaphot of this aplication](snapshot.jpg)
