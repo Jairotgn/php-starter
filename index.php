@@ -1,5 +1,5 @@
 <?php
-//Global Start aplication entry point
+//Global Start aplication entry points
 
 //Global text variables like metadata and title
 $lang = file_get_contents('./lang.json', true);
