@@ -26,6 +26,6 @@ Define page title page and meta description in this file.
 
 ### Extra
 Bootrstrap 5.2 Built fast css themes.
-Jquery 3.6 -> Javascript tools
+Jquery 3.6 -> Javascript tools.
 
 ![A snaphot of this aplication](snapshot.jpg)
