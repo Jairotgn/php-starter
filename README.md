@@ -4,7 +4,7 @@ How to start with PHP project? Look this basic starter php structure.
 ### Theme structure
 1. Base theme: index.php
 2. Head: head.php, set title and meta from 'lang.json'. Load css anf js files.
-3. Navigation: nav.php, a dinamic navbar from 'lang.json'
+3. Navigation: nav.php, a dynamic navbar from 'lang.json'
 4. Footer: footer.php
 
 ### Subpages definition at '/pages' folder.
@@ -15,6 +15,7 @@ Create a new page simply creating new file, example /pages/cars.php  then go to 
 Extend navigation navbar at 'lang.json'
 
 ### Database
+Import database sample data from 'database.sql'
 Put your database config at 'includes/database.php'
 
 ### Rotuting configuration
