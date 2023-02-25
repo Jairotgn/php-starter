@@ -1,23 +1,28 @@
+<?php
+//Get cars from database
+$database = new Database();
+$cars     = $database->getCars();
+?>
 <header class="bg-secondary text-white">
-    <div class="container py-5">
-        <h1 class="text-center">PHP Starter Kit</h1>
+    <div class="container py-5 text-center">
+        <h1>PHP Starter Kit</h1>
+        <p class="fst-italic">php native: simple and robust</p>
     </div>
 </header>
 <main class="container my-5">
     <div class="row">
-        <div class="col-md-4">
-            <div class="blog">
-                Home 1
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="blog">
-                Home 2
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="blog">
-                Home 3
+        <div class="container">
+            <div class="row">
+                <?php
+                foreach ($cars as $car) { ?>
+                <div class='col-md-3'>
+                    <div class='blog'>
+                        <h3> <?=$car->name.' '.$car->brand?></h3> 
+                        <img src="./images/car.jpg" class="img-fluid">
+                        <p class="fst-italic text-end"> <?=number_format($car->price, 0, '.') ?> €</p> 
+                    </div>
+                </div>
+                <?php }?>
             </div>
         </div>
     </div>

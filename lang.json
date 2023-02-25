@@ -1,22 +1,22 @@
 {
     "home": {
-        "title": "PHP Starter Kit",
-		"description": ""
+        "title": "Home",
+		"description": "A php basic structure for simple PHP development"
     },
     "services": {
         "title": "Services",
-		"description": "Services description"
+		"description": "Meta description for Services"
     },
     "about-us": {
         "title": "About Us",
-		"description": "About Us description"
+		"description": "Meta description for Services"
     },
     "blog": {
         "title": "Blog",
-		"description": "Blog description"
+		"description": "Meta description for page Blog"
     },
     "contact": {
         "title": "Contact",
-		"description": "Contact description"
+		"description": "Meta description for page Contact"
     }
 }

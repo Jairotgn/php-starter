@@ -1,0 +1,24 @@
+nav {
+    background:#2d394b
+}
+nav .navbar-nav a.nav-link{
+    color:#fff;
+    font-size:1.1em;
+    padding-left: 7px!important;
+    padding-right: 7px!important;
+}
+nav .navbar-nav .nav-link:hover,
+nav .navbar-nav .nav-link.active {
+    color:#d7beff;
+    text-decoration: underline;
+}
+header{
+    min-height: 200px;
+    background:linear-gradient(92.72deg,#8e49ff,#003cb0)
+}
+.blog{
+    min-height: 100px;
+}
+footer{
+    background:#243238
+}

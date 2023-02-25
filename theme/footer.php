@@ -1,3 +1,3 @@
-<footer class="py-2 text-white fs-5">
-    <div class="text-center">Developed by jairotgn</div>
+<footer class="text-center py-5 text-white mt-2">
+    © 2023 Developed by JairoTgn   
 </footer>
