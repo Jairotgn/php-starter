@@ -11,7 +11,7 @@ Build fast responsive themes with Bootstrap css.
 
 ### Instructions
 1. Put your database configuration at 'config.php'
-2. Import databae data from 'database.sql'
+2. Import database from 'database.sql'
 3. Ready!
 
 ### Subpages definition at '/pages' folder.

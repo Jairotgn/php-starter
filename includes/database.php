@@ -57,8 +57,6 @@ class Database
 		$className  = get_called_class();
 		$vars 		= array_keys(get_class_vars($className));
 
-        print_r($vars); exit;
-
 		if (count($data)){
 			foreach ($data as $name=>$value) {	
 				if (in_array($name, $vars)) {
