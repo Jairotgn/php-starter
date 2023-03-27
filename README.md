@@ -1,11 +1,18 @@
 # php-starter
-How to start with PHP project? Look this basic starter php structure.
+How to start with PHP project? Look this basic starter php project. 
 
-### Theme structure
+Build fast responsive themes with Bootstrap css.
+
+### Theme features
 1. Base theme: index.php
 2. Head: head.php, set title and meta from 'lang.json'. Load css anf js files.
 3. Navigation: nav.php, a dynamic navbar from 'lang.json'
 4. Footer: footer.php
+
+### Instructions
+1. Put your database configuration at 'config.php'
+2. Import databae data from 'database.sql'
+3. Ready!
 
 ### Subpages definition at '/pages' folder.
 Example pages: home, services, about-us, blog and contact
@@ -14,18 +21,12 @@ Create a new page simply creating new file, example /pages/cars.php  then go to 
 ### Navigation 
 Extend navigation navbar at 'lang.json'
 
-### Database
-Import database sample data from 'database.sql'
-Put your database config at 'includes/database.php'
-
 ### Rotuting configuration
 Extend your routes a the router.php file.
 
 ### Custom tags lang.json 
 Define page title page and meta description in this file.
 
-### Extra
-Bootrstrap 5.2 Built fast css themes.
-Jquery 3.6 -> Javascript tools.
+
 
 ![A snaphot of this aplication](snapshot.jpg)

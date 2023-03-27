@@ -1,39 +1,70 @@
 <?php
-// Database config class
+
+// A simple ORM Model-Database
+
 class Database
 {
-    // Put your database config in this file
-    public $mysqli;
-    public $host     = 'localhost';
-    public $user     = 'root';
-    public $dbname   = 'php-starter';
-    public $password = '';
+    //Main db object
+    public  $mysqli;
+  
+    // Database constructor
+    public function __construct($data = null) {
 
-    //Database constructor
-    public function __construct() {
+        // Prepare database config
+        $this->mysqli = new mysqli(Config::$host, Config::$user, Config::$password, Config::$dbname);
 
-         //Prepare database connection
-        $this->mysqli = new mysqli($this->host, $this->user, $this->password, $this->dbname);
-
-        // Check connection
+        // Check database connection
         if ($this->mysqli->connect_errno) {
             die('Database connection error '.$this->mysqli->connect_error);
         }
+
+        // GET one row from database by id
+        if (is_numeric($data)) {
+            $this->selectOne($data);
+
+        // NEW object for save later
+        } else if (is_array($data)) {
+           
+        }		 
     }
 
-    // SQL example list cars table
-    public function getCars() {
-        $result = $this->mysqli->query("SELECT * FROM cars LIMIT 4");
-        $data   = $this->fetch_object($result);
-        return $data;
-    }
+    // Get one row by id
+    public function selectOne($id) {
+		$className   = get_called_class();
+		$table       = $className::$table; 
+        $resultQuery = $this->mysqli->query("SELECT * FROM $table WHERE id = ".(int)$id);
+        $data        = $this->getData($resultQuery);   
+        
+        if ($data[0]->id){
+            $this->loadVarsArray($data);
+        }
+	}
 
-    // fetch object array 
-    public function fetch_object($result) {
+    // Fetch base object from database
+
+    public function getData($resultQuery) {
         $return = array();
-        while ($obj = $result->fetch_object()) {
+        while ($obj = $resultQuery->fetch_object()) {
             $return[] = $obj;
         }
         return $return;
     }
+
+    // Convert base object to php class
+
+    public function loadVarsArray($data = NULL) {
+
+		$className  = get_called_class();
+		$vars 		= array_keys(get_class_vars($className));
+
+        print_r($vars); exit;
+
+		if (count($data)){
+			foreach ($data as $name=>$value) {	
+				if (in_array($name, $vars)) {
+					$this->$name = $value;
+				}
+			}
+		}	
+	}
 }
