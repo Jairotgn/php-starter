@@ -3,9 +3,9 @@
         "title": "Home",
 		"description": "A php basic structure for simple PHP development"
     },
-    "services": {
-        "title": "Services",
-		"description": "Meta description for Services"
+    "cars": {
+        "title": "Cars",
+		"description": "Meta description for cars"
     },
     "about-us": {
         "title": "About Us",
@@ -18,5 +18,9 @@
     "contact": {
         "title": "Contact",
 		"description": "Meta description for page Contact"
+    },
+    "login": {
+        "title": "Login",
+		"description": "Login page"
     }
 }

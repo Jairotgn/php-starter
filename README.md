@@ -14,6 +14,11 @@ Build fast responsive themes with Bootstrap css.
 2. Import database from 'database.sql'
 3. Ready!
 
+### Backofice login page
+A administrator dashboard is avaiable on login page.
+Simple ayhethification in config file.
+Demo credientials: 'admin/passbarcelona'
+
 ### Subpages definition at '/pages' folder.
 Example pages: home, services, about-us, blog and contact
 Create a new page simply creating new file, example /pages/cars.php  then go to the browser and open server.com/cars.

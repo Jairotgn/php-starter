@@ -4,28 +4,37 @@
 
 class Database
 {
-    //Main db object
+    // Main db object
     public  $mysqli;
   
-    // Database constructor
+    // Database class constructor
     public function __construct($data = null) {
 
-        // Prepare database config
-        $this->mysqli = new mysqli(Config::$host, Config::$user, Config::$password, Config::$dbname);
-
-        // Check database connection
-        if ($this->mysqli->connect_errno) {
-            die('Database connection error '.$this->mysqli->connect_error);
-        }
+        // Connect to database
+        self::connect();
 
         // GET one row from database by id
         if (is_numeric($data)) {
             $this->selectOne($data);
 
-        // NEW object for save later
+        // PREPARE new object
         } else if (is_array($data)) {
            
         }		 
+    }
+
+    // Connect to database
+    public static function connect($return = true) {
+        
+         // Prepare database config
+         $mysqli = new mysqli(Config::$dbhost, Config::$dbuser, Config::$dbpassword, Config::$dbname);
+
+         // Check database connection
+         if ( $mysqli->connect_errno) {
+             die('Database connection error '. $mysqli->connect_error);
+         }
+        
+         return $mysqli;
     }
 
     // Get one row by id
@@ -33,7 +42,7 @@ class Database
 		$className   = get_called_class();
 		$table       = $className::$table; 
         $resultQuery = $this->mysqli->query("SELECT * FROM $table WHERE id = ".(int)$id);
-        $data        = $this->getData($resultQuery);   
+        $data        = self::fetch($resultQuery);   
         
         if ($data[0]->id){
             $this->loadVarsArray($data);
@@ -42,7 +51,7 @@ class Database
 
     // Fetch base object from database
 
-    public function getData($resultQuery) {
+    public static function fetch($resultQuery) {
         $return = array();
         while ($obj = $resultQuery->fetch_object()) {
             $return[] = $obj;

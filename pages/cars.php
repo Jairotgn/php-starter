@@ -1,12 +1,11 @@
 <?php
 
 //Get cars from database
-$cars    = Car::select(array('limit' => 4));
+$cars    = Car::select();
 ?>
 <header class="bg-secondary text-white">
-    <div class="container py-5 text-center">
-        <h1>PHP Starter Kit</h1>
-        <p class="fst-italic">Simple and robust php native</p>
+    <div class="container py-5">
+        <h1 class="text-center">A list of cars</h1>
     </div>
 </header>
 <main class="container my-5">
