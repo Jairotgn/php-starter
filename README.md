@@ -5,18 +5,18 @@ Build fast responsive themes with Bootstrap css.
 
 ### Theme features
 1. Base theme: `theme/index.php`
-2. Head: `head.php`, set title and meta from `lang.json`.
-3. Navigation: `nav.php`, a dynamic navbar from 'lang.json'.
+2. Head: `theme/head.php`, set title and meta from `lang.json`.
+3. Navigation: `theme/nav.php`, a dynamic navbar from 'lang.json'.
 
 ### Instructions
 1. Put your database configuration at `config.php`.
-2. Import database deni data from `database.sql`.
+2. Import database demo data from `database.sql`.
 3. Ready!
 
-### Backofice login page
-A administrator dashboard is avaiable on login page.
-Simple ayhethification in config file.
-Demo credientials: 'admin/passbarcelona'
+### Back-Office Authentication
+An administrator panel is avaiable by login page.
+Modify credentials in `config.php` file.
+Demo credientials: `admin/passbarcelona`.
 
 ### Subpages definition at `/pages` folder.
 Example pages: home, cars, about-us, blog and contact
