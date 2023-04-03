@@ -19,26 +19,19 @@ class Blog extends Database {
         $mysqli = self::connect();
         $sql    = "SELECT * FROM ".self::$table;
         
-
-        // Add limit
+        // Filter by url
         if (array_key_exists('url', $filters)) {
             $filters['url'] = $mysqli->real_escape_string($filters['url']);
             $sql .= " WHERE url = '".$filters['url']."'";
         }
 
-
         // Add limit
         if (array_key_exists('limit', $filters)) {
             $sql .= " LIMIT ".(int)$filters['limit'];
         }
-
         
-
         $result = $mysqli->query($sql);
-
         $data   = self::fetch($result);
         return $data;
     }
-
-
 }

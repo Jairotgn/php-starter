@@ -1,6 +1,7 @@
 <?php
-//Get the blogs
+//Get one blog
 $blogs = Blog::select(array('url'=>$subpage));
+if (!count($blogs)) die('404 not found');
 $blog  = $blogs[0];
 ?>
 <header class="bg-secondary text-white">
