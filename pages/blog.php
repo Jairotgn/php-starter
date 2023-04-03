@@ -1,3 +1,7 @@
+<?php
+//Get the blogs
+$blogs = Blog::select(array('limit' => 3));
+?>
 <header class="bg-secondary text-white">
     <div class="container py-5">
         <h1 class="text-center">Blog Page</h1>
@@ -5,20 +9,12 @@
 </header>
 <main class="container my-5">
     <div class="row">
-        <div class="col-md-4">
-            <div class="blog">
-                Blog 1
-            </div>
+        <?php foreach ($blogs as $blog) { ?>
+        <div class="md-12">
+            <h2> <?=$blog->title ?></h2>
+            <p> <?=$blog->text ?></p>
+            <p> <a href="./blog/<?=$blog->url ?>">Read more</a></p>
         </div>
-        <div class="col-md-4">
-            <div class="blog">
-                Blog 2
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="blog">
-                Blog 3
-            </div>
-        </div>
+        <?php } ?>
     </div>
 </main>

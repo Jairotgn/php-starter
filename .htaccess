@@ -1,8 +1,8 @@
 # One point start aplication for all pages 
 
 <IfModule mod_rewrite.c>
-      RewriteEngine on
+    RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^([^/]+)/?$ index.php?page=$1 [L,QSA]
+    RewriteRule ^([^/]+)(/([^/]+))?/?$ index.php?page=$1&subpage=$3 [L,QSA]
 </IfModule>

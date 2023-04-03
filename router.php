@@ -16,13 +16,15 @@ DEFINE('LANG', json_decode($langJson, true));
 // Get the route from url and htacces
 // Filter page variable. Prevent Local and Remote File Inclusion
 if (isset($_REQUEST['page'])) {
-    $page = $_REQUEST['page'];
-    $page = filter_var($page, FILTER_SANITIZE_URL);
+    $page    = filter_var($_REQUEST['page'], FILTER_SANITIZE_URL);
 }
+if (isset($_REQUEST['subpage'])) {
+    $subpage = filter_var($_REQUEST['subpage'], FILTER_SANITIZE_URL);
+}
+
 
 // Login logic
 if ($page == "login" && isset($post->user) && isset($post->password)) {
-
     if (Config::$user == $post->user && Config::$password == md5($post->password)) {
         $_SESSION['login'] = true;
         header("Location: /admin");
@@ -31,8 +33,13 @@ if ($page == "login" && isset($post->user) && isset($post->password)) {
     }
 }
 
-//Start router logic
-if($page && file_exists("pages/$page.php")) {
+
+// Blog single page
+if ($page == 'blog' && $subpage) {
+    $page = 'blog-single';
+
+// GET THE LANG OF THE CURRENT PAGE
+}else if ($page && file_exists("pages/$page.php")) {
     //Page exists
 
     //GET THE LANF OF THE CURRENT PAGE
@@ -42,17 +49,4 @@ if($page && file_exists("pages/$page.php")) {
     //Page not found
     header("HTTP/1.0 404 Not Found");
     exit;
-}
-
-//Route contact form
-if (isset($_GET['sendcontact'])) {
-    sendContactEmail($_POST);
-}
-
-//Send notification email contact form
-function sendContactEmail($data) {
-    if ($data['email'] && $data['phone'] && $data['message']) {
-        $message = "{$data['email']}  {$data['phone']} {$data['message']}";
-        mail('notify@me.com', 'New Contact Message', $message);
-    }
 }

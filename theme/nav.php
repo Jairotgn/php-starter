@@ -13,7 +13,7 @@
         foreach (LANG as $url => $data) {
           $active = ($url == $page)? 'active' : '';
           echo "<li class='nav-item'>
-            <a class='nav-link $active' href='./$url'>{$data['title']}</a>
+            <a class='nav-link $active' href='/$url'>{$data['title']}</a>
           </li>";
         }?>
       </ul>
