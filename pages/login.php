@@ -1,6 +1,28 @@
 <?php
-// Error reporting
+// Login logic
+
+// Check error on login
 $error = array_key_exists('error', $_GET) ? true : false;
+
+// Get the post data
+$post = (object)$_POST;
+
+// Login logic
+if (isset($post->user) && isset($post->password)) {
+
+    // Success login
+    if (Config::$user == $post->user && Config::$password == md5($post->password)) {
+        $_SESSION['login'] = true;
+        header("Location: /admin");
+
+    // Error login
+    } else {
+        header("Location: /login?error=1");
+    }
+// Already logged
+} else if (isset($_SESSION['login'])) {
+    header("Location: /admin");
+}
 ?>
 <div class="logincontainer d-flex justify-content-center">
     <form method="post" class="my-5 bg-white p-3">

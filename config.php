@@ -13,4 +13,8 @@ class Config {
     public static $dbuser     = 'root';
     public static $dbname     = 'php-starter';
     public static $dbpassword = '';
+
+    // Current page vars
+    public static $page    = 'home';
+    public static $subpage = '';
 }

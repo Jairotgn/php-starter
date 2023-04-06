@@ -1,5 +1,7 @@
 <?php
-//GET current uri page for put nav active item
+// get current page
+
+$currentPage = Config::$page;
 ?>
 <nav class="navbar navbar-expand-lg text-white">
   <div class="container">
@@ -11,11 +13,16 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <?php 
         foreach (LANG as $url => $data) {
-          $active = ($url == $page)? 'active' : '';
+          $active = ($url == $currentPage)? 'active' : '';
           echo "<li class='nav-item'>
             <a class='nav-link $active' href='/$url'>{$data['title']}</a>
           </li>";
         }?>
+        <?php if (isset($_SESSION['login'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Administrator</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
