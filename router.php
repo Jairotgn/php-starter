@@ -15,6 +15,7 @@ if (isset($_REQUEST['subpage'])) {
     Config::$subpage = filter_var($_REQUEST['subpage'], FILTER_SANITIZE_URL);
 }
 
+
 // Admin pages
 if (Config::$page == 'admin') {
 
