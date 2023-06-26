@@ -4,9 +4,9 @@
 
 class Config {
 
-    // Creadentials for login admin panel, password is md5 'passbarcelona'
+    // Creadentials for login admin panel
     public static $user     = 'admin'; 
-    public static $password = '21232f297a57a5a743894a0e4a801fc3';
+    public static $password = '21232f297a57a5a743894a0e4a801fc3'; // admin
     
     // Put your database config 
     public static $dbhost     = 'localhost';
