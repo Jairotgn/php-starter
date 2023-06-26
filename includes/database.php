@@ -5,7 +5,7 @@
 class Database
 {
     // Main db object
-    public  $mysqli;
+    private  $mysqli;
   
     // Database class constructor
     public function __construct($data = null) {

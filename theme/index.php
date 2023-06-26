@@ -1,13 +1,8 @@
 <?php
-// Get current page
-$page    = Config::$page;
-$subpage = Config::$subpage;
 
-if ($page == 'admin' ) {
-  $inc = "administrator/$subpage.php";
-} else { 
-  $inc = "pages/$page.php";
-}
+// Get current page
+$page = "pages/".self::$currentPage.".php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +11,7 @@ if ($page == 'admin' ) {
   </head>
   <body>
     <?php include 'nav.php'; ?>
-    <?php 
-    if ($page == 'admin'){
-      include $inc;
-    } else {
-      include $inc;
-    }
-    ?>
+    <?php include $page; ?>
     <?php include 'footer.php'; ?>
   </body>
 </html>

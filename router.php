@@ -3,9 +3,6 @@
 // Router logic by htacces and mod rewrite
 // ****************************************
 
-// Prepare global text variables like metadata, title, nav
-$langJson = file_get_contents('./lang.json', true);
-DEFINE('LANG', json_decode($langJson, true));
 
 // Get the route from url and htacces
 if (isset($_REQUEST['page'])) {

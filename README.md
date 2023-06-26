@@ -20,7 +20,7 @@ A simple blog is included.
 ### Back-Office Authentication
 An administrator panel is available by login page.
 Modify credentials in `config.php` file.
-Demo credentials: `admin/passbarcelona`.
+Demo credentials: `admin/admin`.
 
 ### Subpages definition at `/pages` folder.
 Example pages: home, cars, about-us, blog and contact
@@ -30,7 +30,7 @@ Create a new page simply creating new file, example `/pages/cars.php`  then go 
 Extend navigation navbar at `lang.json`.
 
 ### Routing configuration
-Extend your routes a the `router.php` file.
+Create your your routes in  `routes.php` file.
 
 ### Custom tags `lang.json`
 Define page title page and meta description in this file.

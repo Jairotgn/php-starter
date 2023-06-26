@@ -2,8 +2,12 @@
 // Configuration
 include 'config.php';
 
-//includes
+// Includes and Libraries
 include 'includes/database.php';
+
+// Prepare global text variables like metadata, title, nav
+$langJson = file_get_contents('./lang.json', true);
+DEFINE('LANG', json_decode($langJson, true));
 
 //Autoload models
 spl_autoload_register(function ($class_name) {
@@ -14,7 +18,4 @@ spl_autoload_register(function ($class_name) {
 session_start();
 
 //Start router
-include 'router.php';
-
-//Start theme
-include 'theme/index.php';
+include 'routes.php';

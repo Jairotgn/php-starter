@@ -13,7 +13,7 @@ $blogs = Blog::select(array('limit' => 3));
         <div class="md-12">
             <h2> <?=$blog->title ?></h2>
             <p> <?=$blog->text ?></p>
-            <p> <a href="./blog/<?=$blog->url ?>">Read more</a></p>
+            <p> <a href="./blog/<?=$blog->id ?>">Read more</a></p>
         </div>
         <?php } ?>
     </div>

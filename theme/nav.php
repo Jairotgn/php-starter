@@ -1,8 +1,4 @@
-<?php
-// get current page
 
-$currentPage = Config::$page;
-?>
 <nav class="navbar navbar-expand-lg text-white">
   <div class="container">
     <a class="navbar-brand text-white" href="./">A php starter kit</a>
@@ -13,7 +9,7 @@ $currentPage = Config::$page;
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <?php 
         foreach (LANG as $url => $data) {
-          $active = ($url == $currentPage)? 'active' : '';
+          $active = ($url == Router::$currentPage)? 'active' : '';
           echo "<li class='nav-item'>
             <a class='nav-link $active' href='/$url'>{$data['title']}</a>
           </li>";
