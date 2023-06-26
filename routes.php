@@ -4,7 +4,7 @@ require 'includes/router.php';
 
 // Declare your routes here
 Router::get('/');
-Router::get('/cars',);
+Router::get('/cars');
 Router::get('/about-us');
 Router::get('/blog');
 Router::get('/blog/{id}');
