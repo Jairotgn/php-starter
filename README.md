@@ -22,9 +22,11 @@ An administrator panel is available by login page.
 Modify credentials in `config.php` file.
 Demo credentials: `admin/admin`.
 
-### Subpages definition at `/pages` folder.
-Example pages: home, cars, about-us, blog and contact
-Create a new page simply creating new file, example `/pages/cars.php`  then go to the browser and open server.com/cars.
+### Routes and pages 
+Example pages: home, cars, about-us, blog and contact.
+Create a new page simply:
+1. Declare your new route at `/routes.php` file.
+2. Create page template at `/pages` folder with the same name as the route.
 
 ### Navigation 
 Extend navigation navbar at `lang.json`.
